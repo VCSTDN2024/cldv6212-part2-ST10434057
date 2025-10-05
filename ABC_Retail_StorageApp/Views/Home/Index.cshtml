@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<div class="text-center mt-5">
+    <h1 class="display-5">ABC Retail Storage Dashboard</h1>
+    <p class="lead">Manage blobs, queues, tables and file share.</p>
+
+    <div class="d-grid gap-3 col-6 mx-auto mt-4">
+        <a class="btn btn-primary btn-lg" asp-controller="Blob" asp-action="Index">Blob Storage</a>
+        <a class="btn btn-success btn-lg" asp-controller="Queue" asp-action="Index">Queue Messages</a>
+        <a class="btn btn-warning btn-lg" asp-controller="Table" asp-action="Index">Table Entities</a>
+        <a class="btn btn-info btn-lg" asp-controller="FileShare" asp-action="Index">File Share</a>
+    </div>
+</div>

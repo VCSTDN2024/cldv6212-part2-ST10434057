@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ABC_Retail_StorageApp.Models.FileShareModel>
+
+@{
+    ViewData["Title"] = "File Share";
+}
+
+<h2>Azure File Share</h2>
+
+<form asp-action="UploadFile" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <button type="submit">Upload File</button>
+</form>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.FileName</td>
+                <td>
+                    <form asp-action="DeleteFile" method="post">
+                        <input type="hidden" name="fileName" value="@file.FileName" />
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

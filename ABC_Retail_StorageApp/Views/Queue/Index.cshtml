@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ABC_Retail_StorageApp.Models.QueueMessageModel>
+
+<h2>Azure Queue Messages</h2>
+
+<form asp-action="AddMessage" method="post" class="mb-3">
+    <input type="text" name="text" placeholder="Enter a message" class="form-control mb-2" required />
+    <button type="submit" class="btn btn-primary">Add Message</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Message ID</th>
+            <th>Text</th>
+            <th>Inserted On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var msg in Model)
+        {
+            <tr>
+                <td>@msg.MessageId</td>
+                <td>@msg.MessageText</td>
+                <td>@msg.InsertedOn?.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>

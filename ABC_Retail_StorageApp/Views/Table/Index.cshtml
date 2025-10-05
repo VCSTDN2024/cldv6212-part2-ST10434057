@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ABC_Retail_StorageApp.Models.TableEntityModel>
+
+<h2>Azure Table Storage</h2>
+
+<form asp-action="Add" asp-controller="Table" method="post">
+    <label>Partition Key:</label>
+    <input type="text" name="PartitionKey" />
+
+    <label>Row Key:</label>
+    <input type="text" name="RowKey" />
+
+    <label>Value:</label>
+    <input type="text" name="Value" />
+
+    <button type="submit">Add Entity</button>
+</form>
+
+<hr />
+
+<table>
+    <thead>
+        <tr>
+            <th>Partition Key</th>
+            <th>Row Key</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entity in Model)
+        {
+            <tr>
+                <td>@entity.PartitionKey</td>
+                <td>@entity.RowKey</td>
+                <td>@entity.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>

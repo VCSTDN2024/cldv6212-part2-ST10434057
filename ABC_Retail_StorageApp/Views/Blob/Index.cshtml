@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ABC_Retail_StorageApp.Models.BlobModel>
+
+@{
+    ViewData["Title"] = "Blob Storage";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Azure Blob Storage</h2>
+
+    <!-- Upload Form -->
+    <form asp-action="UploadBlob" asp-controller="Blob" method="post" enctype="multipart/form-data" class="mb-4 text-center">
+        <input type="file" name="file" class="form-control w-50 d-inline-block" />
+        <button type="submit" class="btn btn-primary ms-2">Upload</button>
+    </form>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var blob in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center">
+
+                            <!-- Image / Video Preview -->
+                            @if (blob.BlobUrl.EndsWith(".jpg") || blob.BlobUrl.EndsWith(".png") || blob.BlobUrl.EndsWith(".jpeg") || blob.BlobUrl.EndsWith(".gif"))
+                            {
+                                <img src="@blob.BlobUrl" class="img-fluid rounded mb-3" alt="@blob.BlobName" />
+                            }
+                            else if (blob.BlobUrl.EndsWith(".mp4") || blob.BlobUrl.EndsWith(".mov") || blob.BlobUrl.EndsWith(".webm"))
+                            {
+                                <video controls width="100%" class="rounded mb-3">
+                                    <source src="@blob.BlobUrl" type="video/mp4" />
+                                </video>
+                            }
+                            else
+                            {
+                                <p><strong>@blob.BlobName</strong></p>
+                            }
+
+                            <!-- Buttons -->
+                            <form asp-action="DeleteBlob" asp-controller="Blob" method="post">
+                                <input type="hidden" name="blobName" value="@blob.BlobName" />
+                                <a href="@blob.BlobUrl" target="_blank" class="btn btn-outline-success btn-sm me-2">View</a>
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center text-muted">No blobs uploaded yet. Upload an image or video to get started!</p>
+    }
+</div>

@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Storage Dashboard";
+}
+<div class="mt-4">
+    <h2>Storage Dashboard</h2>
+    <p>Quick links:</p>
+
+    <div class="d-grid gap-2 col-4">
+        <a class="btn btn-primary" asp-controller="Blob" asp-action="Index">Manage Blobs</a>
+        <a class="btn btn-success" asp-controller="Queue" asp-action="Index">Manage Queue</a>
+        <a class="btn btn-warning" asp-controller="Table" asp-action="Index">Manage Table</a>
+        <a class="btn btn-info" asp-controller="FileShare" asp-action="Index">Manage File Share</a>
+    </div>
+</div>

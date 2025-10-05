@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABC_Retail_StorageApp", "ABC_Retail_StorageApp\ABC_Retail_StorageApp.csproj", "{80F4A552-28B3-4627-9DAC-5A3452E8D4F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80F4A552-28B3-4627-9DAC-5A3452E8D4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F4A552-28B3-4627-9DAC-5A3452E8D4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F4A552-28B3-4627-9DAC-5A3452E8D4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F4A552-28B3-4627-9DAC-5A3452E8D4F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DDA8C1E-033C-426A-80C0-D4ED1CA1F493}
+	EndGlobalSection
+EndGlobal
